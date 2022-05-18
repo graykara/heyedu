@@ -1,0 +1,97 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+  NewCops: enable
+  Include:
+    - 'spec/**/*'
+    - '**/Gemfile'
+  Exclude:
+    - 'lib/**/*'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+
+Metrics/BlockLength:
+  IgnoredMethods:
+    - context
+    - describe
+    - it
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
+    - configure
+    - group
+
+# Layout / Style
+Layout/LineLength:
+  Exclude:
+    - 'app/helpers/**/*'
+    - 'config/routes.rb'
+    - 'config/initializers/devise.rb'
+
+Lint/RedundantDirGlobSort:
+  Enabled: false
+
+Matrix/MethodLength:
+  Exclude:
+    - 'app/helpers/**/*'
+  Max: 20
+
+Style/Documentation:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/WordArray:
+  EnforcedStyle: percent
+
+# Rails
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+# RSpec
+RSpec/HookArgument:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/FilePath:
+  Exclude:
+    - 'spec/requests/**/*.rb'
+
+Style/ModuleFunction:
+  EnforcedStyle: module_function
