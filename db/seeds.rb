@@ -7,3 +7,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# 유저 데이터 작성
+# 관리자 유저
+User.create!(
+  email: 'admin@example.com',
+  password: '123456',
+  password_confirmation: '123456',
+  role: 1
+)
+
+# 일반 유저
+User.create!(
+  email: 'user@example.com',
+  password: '123456',
+  password_confirmation: '123456',
+  role: 0
+)

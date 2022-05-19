@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'pages/welcome'
   get 'pages/privacy'
   get 'pages/terms'

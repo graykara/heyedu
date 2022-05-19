@@ -16,7 +16,7 @@
       </div>
 
       <div class="hidden sm:ml-6 sm:block">
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
           <div class="flex items-center">
             <!-- Profile dropdown -->
             <div class="relative ml-3"
@@ -29,32 +29,32 @@
                  data-dropdown-leave-timeout="100"
                  data-dropdown-target="button"
                  data-action="click->dropdown#toggle click@window->dropdown#hide">
-<!--              <div>-->
-<!--                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">-->
-<!--                  <span class="sr-only">Open user menu</span>-->
-<!--                  <img class="w-8 h-8 rounded-full"-->
-<!--                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"-->
-<!--                       alt="">-->
-<!--                </button>-->
-<!--              </div>-->
+              <div>
+                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-8 h-8 rounded-full"
+                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                       alt="">
+                </button>
+              </div>
 
               <div class="absolute right-0 z-50 hidden w-24 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"
                    data-dropdown-target="menu">
                 <!-- Active: "bg-gray-100", Not Active: "" -->
 
-                <%= link_to   "Settings", "edit_user_registration_path",                   class: "block px-4 py-2 w-full text-sm text-center text-gray-700 hover:bg-gray-100", id: "user-menu-item-0", role: "menuitem", tabindex: "-1" %>
-                <%= button_to "Sign out", "destroy_user_session_path",    method: :delete, class: "block px-4 py-2 w-full text-sm text-center text-gray-700 hover:bg-gray-100", id: "user-menu-item-0", role: "menuitem", tabindex: "-1" %>
+                <%= link_to   "Settings", edit_user_registration_path,                   class: "block px-4 py-2 w-full text-sm text-center text-gray-700 hover:bg-gray-100", id: "user-menu-item-0", role: "menuitem", tabindex: "-1" %>
+                <%= button_to "Sign out", destroy_user_session_path,    method: :delete, class: "block px-4 py-2 w-full text-sm text-center text-gray-700 hover:bg-gray-100", id: "user-menu-item-0", role: "menuitem", tabindex: "-1" %>
               </div>
             </div>
           </div>
-        <%# else %>
+        <% else %>
           <div class="flex flex-col list-none lg:flex-row lg:ml-auto">
             <div class="flex items-center">
-              <%= link_to "Sign in", "new_user_session_path", class: "flex items-center px-2 py-4 text-white lg:hover:text-white lg:px-4 lg:py-2 text-m" %>
+              <%= link_to "Sign in", new_user_session_path, class: "flex items-center px-2 py-4 text-white lg:hover:text-white lg:px-4 lg:py-2 text-m" %>
             </div>
           </div>
-        <%# end %>
+        <% end %>
 
       </div>
 

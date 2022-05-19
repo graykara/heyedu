@@ -35,6 +35,10 @@ Layout/LineLength:
     - 'config/routes.rb'
     - 'config/initializers/devise.rb'
 
+Lint/EmptyBlock:
+  Exclude:
+    - 'spec/factories/*'
+
 Lint/RedundantDirGlobSort:
   Enabled: false
 
