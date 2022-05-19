@@ -74,6 +74,9 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+
+  # for debug tool
+  gem 'pry'
 end
 
 group :development do
