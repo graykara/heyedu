@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <title>Heyedu</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="ko" class="h-full antialiased">
+<%= render "shared/head" %>
+<body class="font-sans antialiased bg-gray-50">
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+<%= render "shared/flash_notice" %>
 
-  <body>
-    <%= yield %>
-  </body>
+<%= render "shared/navbar" %>
+
+<header class="relative bg-white shadow-sm">
+  <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-semibold leading-6 text-gray-900">
+      <%= yield(content_for?(:page_heading)? :page_heading : :title) %>
+    </h1>
+  </div>
+</header>
+
+<main class="relative min-h-16">
+  <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="px-4 py-4 sm:px-0">
+      <div class="">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="bg-gray-800" aria-labelledby="footer-heading">
+  <%= render "shared/footer" %>
+</footer>
+
+</body>
 </html>
