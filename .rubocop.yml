@@ -47,6 +47,9 @@ Naming/FileName:
   Exclude:
     - 'Rakefile'
 
+Style/BlockComments:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 
