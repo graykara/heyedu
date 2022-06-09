@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   # Pundit
   include Pundit
 
+  include Pagy::Backend
+
   rescue_from Pundit::NotAuthorizedError, with: :render_forbidden
 
   def render_forbidden

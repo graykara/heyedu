@@ -50,6 +50,9 @@ gem 'bootsnap', require: false
 # static page engine
 gem 'high_voltage', '~> 3.1'
 
+# paginate
+gem 'pagy'
+
 # authentication
 gem 'devise'
 gem 'pundit'

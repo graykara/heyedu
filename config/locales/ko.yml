@@ -1,0 +1,16 @@
+ko:
+  menu:
+    posts:
+      notice:   "공지사항"
+      faq:      "자주 묻는 질문"
+      data:     "자료실"
+      question: "질문 답변"
+      press:    "보도자료"
+
+  table:
+    number:     "번호"
+    category:   "카테고리"
+    title:      "제목"
+    author:       "작성자"
+    created_at: "작성일"
+    views:      "조회수"
