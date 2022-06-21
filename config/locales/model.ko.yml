@@ -1,0 +1,8 @@
+ko:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            user:
+              required: 필수'

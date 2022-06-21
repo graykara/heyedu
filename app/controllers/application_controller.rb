@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   # Pundit
-  include Pundit
+  include Pundit::Authorization
 
   include Pagy::Backend
 

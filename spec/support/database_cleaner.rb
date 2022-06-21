@@ -7,6 +7,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
+    Rails.application.load_seed
   end
 
   # start the transaction strategy as examples are run
