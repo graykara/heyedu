@@ -28,4 +28,23 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  attribute :category
+  attribute :status
+
+  enum status: {
+    draft: 'draft',
+    reviewed: 'reviewed',
+    published: 'published',
+    deleted: 'deleted'
+  }
+
+  enum category: {
+    notice: 'notice',
+    question: 'question',
+    data: 'data',
+    press: 'press',
+    one_on_one: 'one_on_one',
+    faq: 'faq'
+  }
 end

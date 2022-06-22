@@ -74,4 +74,60 @@ module ApplicationHelper
       "px-5 py-2 text-base #{base} #{theme}"
     end
   end
+
+  def i_to_str(arg)
+    if arg.to_i < 10
+      "0#{arg}"
+    else
+      arg
+    end
+  end
+
+  def time_to_date(arg)
+    if arg.length.positive?
+      "#{arg[5]}#{t('datetime.prompts.year')} #{arg[4]}#{t('datetime.prompts.month')} #{arg[3]}#{t('datetime.prompts.day')}"
+    else
+      '-'
+    end
+  end
+
+  def time_to_day_month(arg)
+    if arg.length.positive?
+      "#{arg[4]}/#{arg[3]}"
+    else
+      '-'
+    end
+  end
+
+  def time_to_dash(arg)
+    if arg.length.positive?
+      "#{arg[5]}-#{i_to_str(arg[4])}-#{i_to_str(arg[3])} #{i_to_str(arg[2])}:#{i_to_str(arg[1])}:#{i_to_str(arg[0])}"
+    else
+      '-'
+    end
+  end
+
+  def time_to_min(arg)
+    if arg.length.positive?
+      "#{arg[5]}#{t('datetime.prompts.year')} #{i_to_str(arg[4])}#{t('datetime.prompts.month')} #{i_to_str(arg[3])}#{t('datetime.prompts.day')} #{i_to_str(arg[2])}#{t('datetime.prompts.hour')} #{i_to_str(arg[1])}#{t('datetime.prompts.minute')} #{i_to_str(arg[0])} #{t('datetime.prompts.second')}"
+    else
+      '-'
+    end
+  end
+
+  def time_to_min_comma(arg)
+    if arg.length.positive?
+      "#{arg[5]}-#{i_to_str(arg[4])}-#{i_to_str(arg[3])} #{i_to_str(arg[2])}:#{i_to_str(arg[1])}:#{i_to_str(arg[0])}"
+    else
+      '-'
+    end
+  end
+
+  def time_to_comma(arg)
+    if arg.length.positive?
+      "#{arg[5]}.#{i_to_str(arg[4])}.#{i_to_str(arg[3])}"
+    else
+      '-'
+    end
+  end
 end

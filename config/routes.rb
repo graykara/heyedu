@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   get 'pages/remote'
   get 'pages/prevent_email'
 
+  Post.categories.each_key do |category|
+    scope category, as: category do
+      resources :posts
+    end
+  end
+
   root to: 'pages#welcome', id: 'home'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

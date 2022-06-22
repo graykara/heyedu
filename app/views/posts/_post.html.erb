@@ -1,0 +1,33 @@
+<div class="h-full flex flex-col">
+  <div class="pt-5 pb-2 border-b border-gray-200 sm:flex sm:items-center sm:justify-between">
+    <h2 class="text-base font-medium">
+      <span class="text-gray-900"><%= post.title %></span>
+    </h2>
+  </div>
+
+  <div class="min-h-0 flex-1 flex overflow-hidden">
+    <main class="min-w-0 flex-1 border-t border-gray-200 xl:flex">
+      <section aria-labelledby="message-heading" class="min-w-0 flex-1 h-full flex flex-col overflow-hidden xl:order-last">
+        <div class="min-h-0 flex-1 overflow-y-auto">
+          <ul role="list" class="py-4 space-y-2 sm:px-0 sm:space-y-0 lg:px-0">
+            <li class="bg-white px-4 py-4 shadow sm:rounded-lg sm:px-6">
+
+              <div class="pb-4 mb-4 border-b border-gray-200 sm:flex sm:justify-between sm:items-baseline">
+                <h3 class="text-base font-medium">
+                  <span class="text-gray-900"><%= post.user.email %></span>
+                  <span class="text-gray-600">wrote</span>
+                </h3>
+                <p class="mt-1 text-sm text-gray-600 whitespace-nowrap sm:mt-0 sm:ml-3">
+                  <time datetime="2021-01-28T19:24"><%= time_to_dash(post.created_at.to_a) %></time>
+                </p>
+              </div>
+              <div class="mt-4 space-y-6 text-sm text-gray-800">
+                <%= post.body %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>

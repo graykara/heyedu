@@ -14,3 +14,146 @@ ko:
     author:       "작성자"
     created_at: "작성일"
     views:      "조회수"
+
+  common:
+    lists: "목록"
+    save: "저장"
+    update: "수정"
+
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y년 %m월 %d일 (%a)"
+      only_day: "%d일"
+
+    day_names: [일요일, 월요일, 화요일, 수요일, 목요일, 금요일, 토요일]
+    abbr_day_names: [일, 월, 화, 수, 목, 금, 토]
+    month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+    abbr_month_names: [~, 1월, 2월, 3월, 4월, 5월, 6월, 7월, 8월, 9월, 10월, 11월, 12월]
+    order: [ year, month, day ]
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%y/%m/%d %H:%M"
+      long: "%Y년 %B월 %d일, %H시 %M분 %S초 %Z"
+      only_second: "%S초"
+
+    am: "오전"
+    pm: "오후"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "30초"
+      less_than_x_seconds:
+        one: "일초 이하"
+        other: "%{count}초 이하"
+      x_seconds:
+        one: "일초"
+        other: "%{count}초"
+      less_than_x_minutes:
+        one: "일분 이하"
+        other: "%{count}분 이하"
+      x_minutes:
+        one: "일분"
+        other: "%{count}분"
+      about_x_hours:
+        one: "약 한시간"
+        other: "약 %{count}시간"
+      x_days:
+        one: "하루"
+        other: "%{count}일"
+      about_x_months:
+        one: "약 한달"
+        other: "약 %{count}달"
+      x_months:
+        one: "한달"
+        other: "%{count}달"
+      about_x_years:
+        one: "약 일년"
+        other: "약 %{count}년"
+      over_x_years:
+        one: "일년 이상"
+        other: "%{count}년 이상"
+    prompts:
+      year: "년"
+      month: "월"
+      day: "일"
+      hour: "시"
+      minute: "분"
+      second: "초"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: ", "
+      last_word_connector: ", "
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "한개의 오류가 발생해 %{model}를 저장 할 수 없습니다"
+          other: "%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다"
+        # The variable :count is also available
+        body: "다음 항목에 문제가 발견되었습니다:"
+
+      messages:
+        inclusion: "목록에 포함되어 있습니다"
+        exclusion: "목록에 포함되어 있지 않습니다"
+        invalid: "맞지 않는 형식 입니다"
+        confirmation: "일치하지 않습니다"
+        accepted: "수락하여 주시기 바랍니다"
+        empty: "입력해 주시기 바랍니다"
+        blank: "입력해 주시기 바랍니다"
+        too_long: "%{count}글자 이내로 입력해 주시기 바랍니다"
+        too_short: "%{count}글자 이상으로 입력해 주시기 바랍니다"
+        wrong_length: "%{count}글자로 입력해 주시기 바랍니다"
+        taken: "이미 존재하는 값 입니다"
+        not_a_number: "숫자로 입력해 주시기 바랍니다"
+        greater_than: "%{count}이상을 요구합니다"
+        greater_than_or_equal_to: "%{count}과 같거나 이상을 요구합니다"
+        equal_to: "%{count}과 같아야 합니다"
+        less_than: "%{count}이하를 요구합니다"
+        less_than_or_equal_to: "%{count}과 같거나 이하을 요구합니다"
+        odd: "홀수을 요구합니다"
+        even: "짝수을 요구합니다"
+        record_invalid: "검즈에 실패했습니다. %{errors}"
+        # Append your own errors here or at the model/attributes scope.
+
+      full_messages:
+        format: "%{attribute}%{message}"
+
+  errors:
+    template:
+      header:
+        one: "한개의 오류가 발생해 %{model}를 저장 할 수 없습니다"
+        other: "%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다"
+      body: "다음 항목에 문제가 발견되었습니다:"
+
+    messages:
+      inclusion: "목록에 포함되어 있습니다"
+      exclusion: "목록에 포함되어 있지 않습니다"
+      invalid: "맞지 않는 형식 입니다"
+      confirmation: "일치하지 않습니다"
+      accepted: "수락하여 주시기 바랍니다"
+      empty: "입력해 주시기 바랍니다"
+      blank: "입력해 주시기 바랍니다"
+      too_long: "%{count}글자 이내로 입력해 주시기 바랍니다"
+      too_short: "%{count}글자 이상으로 입력해 주시기 바랍니다"
+      wrong_length: "%{count}글자로 입력해 주시기 바랍니다"
+      taken: "이미 존재하는 값 입니다"
+      not_a_number: "숫자로 입력해 주시기 바랍니다"
+      greater_than: "%{count}이상을 요구합니다"
+      greater_than_or_equal_to: "%{count}과 같거나 이상을 요구합니다"
+      equal_to: "%{count}과 같아야 합니다"
+      less_than: "%{count}이하를 요구합니다"
+      less_than_or_equal_to: "%{count}과 같거나 이하을 요구합니다"
+      odd: "홀수을 요구합니다"
+      even: "짝수을 요구합니다"
+      record_invalid: "검즈에 실패했습니다. %{errors}"
+      # Append your own errors here or at the model/attributes scope.
+
+    full_messages:
+      format: "%{attribute}%{message}"

@@ -42,10 +42,19 @@ Lint/EmptyBlock:
 Lint/RedundantDirGlobSort:
   Enabled: false
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/helpers/**/*'
+  Max: 20
+
 Metrics/MethodLength:
   Exclude:
     - 'app/helpers/**/*'
   Max: 20
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'app/helpers/**/*'
 
 Naming/FileName:
   Exclude:
@@ -110,6 +119,9 @@ RSpec/DescribeClass:
 RSpec/FilePath:
   Exclude:
     - 'spec/requests/**/*.rb'
+
+RSpec/InstanceVariable:
+  Enabled: false
 
 Style/ModuleFunction:
   EnforcedStyle: module_function

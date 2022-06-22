@@ -1,0 +1,41 @@
+<% if post.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+      <% post.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="sm:col-span-2">
+  <%= form.label :title, t('labels.post.title'),
+                 class: "block text-sm font-medium text-warm-gray-900" %>
+  <div class="mt-1">
+    <%= form.text_field :title,
+                        class: "block w-full px-4 py-3 rounded-md shadow-sm text-warm-gray-900 focus:indigo-500 focus:border-teal-500 border-warm-gray-300" %>
+  </div>
+</div>
+<div class="sm:col-span-2">
+  <div class="flex justify-between">
+    <%= form.label :body, t('labels.post.body'),
+                   class: "block text-sm font-medium text-warm-gray-900" %>
+    <span id="message-max" class="text-sm text-warm-gray-500">Max. 500 characters</span>
+  </div>
+  <div class="mt-1">
+    <%= form.text_area :body, rows: 5,
+                       class: "block w-full px-4 py-3 border rounded-md shadow-sm text-warm-gray-900 focus:indigo-500 focus:border-teal-500 border-warm-gray-300",
+                       "aria-describedby": "message-max"%>
+  </div>
+</div>
+
+<div class="pt-5 sm:col-span-3">
+  <div class="flex justify-end">
+    <%= link_to t('common.lists'), eval("#{@category}_posts_path"),
+                class: "px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    <%= form.submit t('common.save'),
+                    class: "inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+  </div>
+</div>

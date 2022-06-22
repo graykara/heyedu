@@ -1,8 +1,7 @@
 ko:
-  activerecord:
-    errors:
-      models:
-        post:
-          attributes:
-            user:
-              required: 필수'
+  labels:
+    post:
+      title: "제목"
+      body: "내용"
+      created_at: "작성일"
+      updated_at: "수정일"
