@@ -45,11 +45,13 @@ Lint/RedundantDirGlobSort:
 Metrics/AbcSize:
   Exclude:
     - 'app/helpers/**/*'
+    - 'db/migrate/*'
   Max: 20
 
 Metrics/MethodLength:
   Exclude:
     - 'app/helpers/**/*'
+    - 'db/migrate/*'
   Max: 20
 
 Metrics/ModuleLength:
