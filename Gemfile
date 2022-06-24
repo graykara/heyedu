@@ -56,6 +56,9 @@ gem 'pagy'
 # admin
 gem 'madmin'
 
+# nested set
+gem 'awesome_nested_set'
+
 # authentication
 gem 'devise'
 gem 'pundit'

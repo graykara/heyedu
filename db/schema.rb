@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_000000) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_000000) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index %w[blob_id variation_digest], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "course_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_course_categories_on_code"
+    t.index ["lft"], name: "index_course_categories_on_lft"
+    t.index ["parent_id"], name: "index_course_categories_on_parent_id"
+    t.index ["rgt"], name: "index_course_categories_on_rgt"
   end
 
   create_table "posts", force: :cascade do |t|
