@@ -53,6 +53,9 @@ gem 'high_voltage', '~> 3.1'
 # paginate
 gem 'pagy'
 
+# admin
+gem 'madmin'
+
 # authentication
 gem 'devise'
 gem 'pundit'
