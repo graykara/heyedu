@@ -62,8 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
   end
 
   create_table "course_categories", force: :cascade do |t|
-    t.string "name"
-    t.string "code"
+    t.string "name", null: false
+    t.string "code", null: false
     t.integer "parent_id"
     t.integer "lft", null: false
     t.integer "rgt", null: false

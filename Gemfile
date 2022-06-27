@@ -54,7 +54,7 @@ gem 'high_voltage', '~> 3.1'
 gem 'pagy'
 
 # admin
-gem 'madmin'
+gem 'trestle'
 
 # nested set
 gem 'awesome_nested_set'
@@ -62,6 +62,8 @@ gem 'awesome_nested_set'
 # authentication
 gem 'devise'
 gem 'pundit'
+
+gem 'sassc-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

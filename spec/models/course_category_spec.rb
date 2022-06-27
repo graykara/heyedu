@@ -6,10 +6,10 @@
 #
 #  id             :bigint           not null, primary key
 #  children_count :integer          default(0), not null
-#  code           :string
+#  code           :string           not null
 #  depth          :integer          default(0), not null
 #  lft            :integer          not null
-#  name           :string
+#  name           :string           not null
 #  rgt            :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
