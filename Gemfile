@@ -55,6 +55,7 @@ gem 'pagy'
 
 # admin
 gem 'trestle'
+gem 'trestle-auth'
 
 # nested set
 gem 'awesome_nested_set'

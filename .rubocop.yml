@@ -27,6 +27,7 @@ Metrics/BlockLength:
     - draw
     - configure
     - group
+  Max: 40
 
 # Layout / Style
 Layout/LineLength:
