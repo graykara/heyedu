@@ -2,7 +2,7 @@
 
 Trestle.resource(:posts) do
   menu do
-    item :posts, icon: 'fa fa-star'
+    item :posts, icon: 'fa fa-file'
   end
 
   # Customize the table columns shown on the index view.

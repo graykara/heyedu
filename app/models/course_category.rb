@@ -23,5 +23,5 @@
 #  index_course_categories_on_rgt        (rgt)
 #
 class CourseCategory < ApplicationRecord
-  acts_as_nested_set
+  acts_as_nested_set counter_cache: :children_count
 end
