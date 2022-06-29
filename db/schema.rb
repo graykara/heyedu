@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_29_000000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
     t.index ["rgt"], name: "index_course_categories_on_rgt"
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.bigint "course_category_id", null: false
+    t.string "code", null: false
+    t.string "title", null: false
+    t.string "path", null: false
+    t.integer "width", default: 1280, null: false
+    t.integer "height", default: 720, null: false
+    t.bigint "author_id", null: false
+    t.bigint "pm_id"
+    t.bigint "cp_id"
+    t.boolean "published", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_courses_on_author_id"
+    t.index ["course_category_id"], name: "index_courses_on_course_category_id"
+    t.index ["cp_id"], name: "index_courses_on_cp_id"
+    t.index ["pm_id"], name: "index_courses_on_pm_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "category", default: "notice"
     t.string "status", default: "draft"
@@ -110,5 +129,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "courses", "course_categories"
+  add_foreign_key "courses", "users", column: "author_id"
+  add_foreign_key "courses", "users", column: "cp_id"
+  add_foreign_key "courses", "users", column: "pm_id"
   add_foreign_key "posts", "users"
 end

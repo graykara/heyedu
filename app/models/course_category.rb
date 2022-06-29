@@ -24,4 +24,6 @@
 #
 class CourseCategory < ApplicationRecord
   acts_as_nested_set counter_cache: :children_count
+
+  has_many :courses, dependent: false
 end
