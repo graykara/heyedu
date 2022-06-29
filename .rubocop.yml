@@ -17,6 +17,8 @@ AllCops:
     - 'app/assets/builds/*'
 
 Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/**/*'
   IgnoredMethods:
     - context
     - describe

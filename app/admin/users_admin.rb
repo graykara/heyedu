@@ -2,7 +2,9 @@
 
 Trestle.resource(:users) do
   menu do
-    item :users, icon: 'fa fa-user'
+    group 'users' do
+      item :users, icon: 'fa fa-user'
+    end
   end
 
   # Customize the table columns shown on the index view.

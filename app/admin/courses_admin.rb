@@ -2,7 +2,9 @@
 
 Trestle.resource(:courses) do
   menu do
-    item :courses, icon: 'fa fa-star'
+    group 'courses' do
+      item :courses, icon: 'fa fa-book'
+    end
   end
 
   table do
@@ -12,33 +14,67 @@ Trestle.resource(:courses) do
     column :published
   end
 
-  # Customize the table columns shown on the index view.
-  #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  form do |course|
+    row do
+      col do
+        if course.persisted?
+          select :course_category_id, CourseCategory.all.collect { |c|
+            ["#{c.code} - #{c.name}", c.id]
+          }.sort, { selected: course.course_category.id, include_blank: '-' }
+        else
+          select :course_category_id, CourseCategory.all.collect { |c|
+            ["#{c.code} - #{c.name}", c.id]
+          }.sort, { include_blank: '-' }
+        end
+      end
+      col { text_field :code }
+    end
 
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |course|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
+    text_field :title
+    text_field :path
 
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:course).permit(:name, ...)
-  # end
+    row do
+      col { text_field :width }
+      col { text_field :height }
+    end
+
+    row do
+      col do
+        if course.persisted?
+          select :author_id, User.all, { selected: course.author_id, include_blank: '-' }
+        else
+          select :author_id, User.all, { include_blank: '-' }
+        end
+      end
+
+      col do
+        if course.persisted?
+          select :pm_id, User.all, { selected: course.pm_id, include_blank: '-' }
+        else
+          select :pm_id, User.all, { include_blank: '-' }
+        end
+      end
+
+      col do
+        if course.persisted?
+          select :cp_id, User.all, { selected: course.cp_id, include_blank: '-' }
+        else
+          select :cp_id, User.all, { include_blank: '-' }
+        end
+      end
+    end
+
+    sidebar do
+      if course.poster.attached?
+        form_group :poster, label: false do
+          link_to image_tag(main_app.url_for(course.poster)), main_app.url_for(course.poster), data: { behavior: 'zoom' }
+        end
+      end
+
+      file_field :poster
+      datetime_field :created_at
+      datetime_field :updated_at
+      select :published, [true, false]
+    end
+  end
 end

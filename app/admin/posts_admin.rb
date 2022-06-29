@@ -2,7 +2,9 @@
 
 Trestle.resource(:posts) do
   menu do
-    item :posts, icon: 'fa fa-file'
+    group :posts do
+      item :posts, icon: 'fa fa-file'
+    end
   end
 
   form do |post|

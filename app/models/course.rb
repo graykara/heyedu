@@ -37,4 +37,6 @@ class Course < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :pm, class_name: 'User'
   belongs_to :cp, class_name: 'User'
+
+  has_one_attached :poster
 end

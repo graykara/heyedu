@@ -2,7 +2,9 @@
 
 Trestle.resource(:course_categories) do
   menu do
-    item :course_categories, icon: 'fa fa-layer-group'
+    group 'courses' do
+      item :course_categories, icon: 'fa fa-layer-group'
+    end
   end
 
   scopes do
@@ -35,34 +37,4 @@ Trestle.resource(:course_categories) do
     divider
     select :parent_id, CourseCategory.all.collect { |c| ["#{c.code} - #{c.name}", c.id] }.sort, { include_blank: '-' }
   end
-
-  # Customize the table columns shown on the index view.
-  #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
-
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |course_category|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
-
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:course_category).permit(:name, ...)
-  # end
 end
