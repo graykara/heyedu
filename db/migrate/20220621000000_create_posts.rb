@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.string :category, default: 'notice'
       t.string :status,   default: 'draft'
       t.string :title,    null: false
-      t.text :body,       null: false
+      t.text :content
       t.references :user, null: false, foreign_key: true
       t.string :ip,       default: '127.0.0.1'
       t.integer :reading, default: 0

@@ -5,8 +5,8 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  body       :text             not null
 #  category   :string           default("notice")
+#  content    :text
 #  ip         :string           default("127.0.0.1")
 #  reading    :integer          default(0)
 #  status     :string           default("draft")
@@ -28,7 +28,7 @@ FactoryBot.define do
     category { 'notice' }
     status { 'draft' }
     title { 'Title' }
-    body { 'Body' }
+    content { 'Content' }
     user { nil }
     ip { '8.8.8.8' }
     reading { 0 }

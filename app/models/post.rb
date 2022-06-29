@@ -5,8 +5,8 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  body       :text             not null
 #  category   :string           default("notice")
+#  content    :text
 #  ip         :string           default("127.0.0.1")
 #  reading    :integer          default(0)
 #  status     :string           default("draft")
@@ -26,8 +26,10 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  has_rich_text :content
+
   validates :title, presence: true
-  validates :body, presence: true
+  validates :content, presence: true
 
   attribute :category
   attribute :status

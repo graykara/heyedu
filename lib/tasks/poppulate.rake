@@ -8,7 +8,7 @@ namespace :db do
     1000.times do
       Post.create do |post|
         post.title = Faker::Lorem.sentence
-        post.body = Faker::Lorem.paragraph
+        post.content = Faker::Lorem.paragraph
         post.category = %w[notice faq data one_on_one question press].sample
         post.user_id = [1, 2].sample
       end

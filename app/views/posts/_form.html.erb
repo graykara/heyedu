@@ -20,12 +20,12 @@
 </div>
 <div class="sm:col-span-2">
   <div class="flex justify-between">
-    <%= form.label :body, t('labels.post.body'),
+    <%= form.label :content, t('labels.post.content'),
                    class: "block text-sm font-medium text-warm-gray-900" %>
     <span id="message-max" class="text-sm text-warm-gray-500">Max. 500 characters</span>
   </div>
   <div class="mt-1">
-    <%= form.text_area :body, rows: 5,
+    <%= form.rich_text_area :content, rows: 5,
                        class: "block w-full px-4 py-3 border rounded-md shadow-sm text-warm-gray-900 focus:indigo-500 focus:border-teal-500 border-warm-gray-300",
                        "aria-describedby": "message-max"%>
   </div>

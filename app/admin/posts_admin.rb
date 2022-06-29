@@ -5,6 +5,30 @@ Trestle.resource(:posts) do
     item :posts, icon: 'fa fa-file'
   end
 
+  form do |post|
+    row do
+      col { select :category, Post.categories.keys.map  { |c| [c.humanize, c] } }
+      col { select :status,   Post.statuses.keys.map    { |c| [c.humanize, c] } }
+    end
+
+    text_field :title
+    rich_text_area :content
+    if post.user
+      select :user_id, User.all, { selected: post.user.id }
+      row do
+        col { text_field :ip }
+        col { number_field :reading }
+      end
+
+      row do
+        col { datetime_field :created_at }
+        col { datetime_field :updated_at }
+      end
+    else
+      select :user_id, User.all, { selected: current_user }
+    end
+  end
+
   # Customize the table columns shown on the index view.
   #
   # table do

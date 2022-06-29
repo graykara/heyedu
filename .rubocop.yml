@@ -36,6 +36,14 @@ Layout/LineLength:
     - 'config/routes.rb'
     - 'config/initializers/devise.rb'
 
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'app/admin/**/*'
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'config/initializers/trestle.rb'
+
 Lint/EmptyBlock:
   Exclude:
     - 'spec/factories/*'

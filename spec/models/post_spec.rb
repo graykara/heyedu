@@ -5,8 +5,8 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  body       :text             not null
 #  category   :string           default("notice")
+#  content    :text
 #  ip         :string           default("127.0.0.1")
 #  reading    :integer          default(0)
 #  status     :string           default("draft")
@@ -44,7 +44,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is is not valid without a body' do
-    subject.body = nil
+    subject.content = nil
     expect(subject).not_to be_valid
   end
 end

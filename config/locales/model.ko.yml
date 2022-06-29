@@ -2,6 +2,6 @@ ko:
   labels:
     post:
       title: "제목"
-      body: "내용"
+      content: "내용"
       created_at: "작성일"
       updated_at: "수정일"

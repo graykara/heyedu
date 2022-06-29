@@ -74,7 +74,10 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: t('flash.actions.destroy.notice') }
+      format.html do
+        redirect_to url_for(controller: :posts, action: :index),
+                    notice: t('flash.actions.destroy.notice')
+      end
       format.json { head :no_content }
     end
   end
@@ -89,6 +92,6 @@ class PostsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def post_params
     # params.fetch(:post, {})
-    params.require(:post).permit(:title, :body, :status, :category, :user_id)
+    params.require(:post).permit(:title, :content, :status, :category, :user_id)
   end
 end

@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_030000) do
     t.string "category", default: "notice"
     t.string "status", default: "draft"
     t.string "title", null: false
-    t.text "body", null: false
+    t.text "content"
     t.bigint "user_id", null: false
     t.string "ip", default: "127.0.0.1"
     t.integer "reading", default: 0
