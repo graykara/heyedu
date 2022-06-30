@@ -39,4 +39,7 @@ class Course < ApplicationRecord
   belongs_to :cp, class_name: 'User'
 
   has_one_attached :poster
+
+  has_one :course_detail, dependent: :destroy, autosave: true
+  accepts_nested_attributes_for :course_detail
 end

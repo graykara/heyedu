@@ -14,7 +14,9 @@ Trestle.resource(:posts) do
     end
 
     text_field :title
-    rich_text_area :content
+    form_group :content do
+      rich_text_area :content
+    end
     if post.user
       select :user_id, User.all, { selected: post.user.id }
       row do
