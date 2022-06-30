@@ -41,5 +41,7 @@ class Course < ApplicationRecord
   has_one_attached :poster
 
   has_one :course_detail, dependent: :destroy, autosave: true
+  has_many :course_chapters, dependent: :delete_all
+
   accepts_nested_attributes_for :course_detail
 end

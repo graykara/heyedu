@@ -8,9 +8,9 @@ Trestle.resource(:courses) do
   end
 
   table do
-    column :course_category
+    column :course_category, link: false
     column :code
-    column :title
+    column :title, link: true
     column :published
   end
 
@@ -122,6 +122,19 @@ Trestle.resource(:courses) do
 
         check_box :certificate
       end
+    end
+
+    tab :course_chapters, badge: course.course_chapters.size do
+      table course.course_chapters, admin: :course_chapters do
+        column :seq
+        column :title
+        column :folder
+        column :pages
+        column :study_time
+        column :start_name
+      end
+
+      concat admin_link_to('New Chapter', admin: :course_chapters, action: :new, params: { course_id: course }, class: 'btn btn-success')
     end
   end
 end
