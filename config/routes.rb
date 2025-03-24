@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :courses, only: %i[index show]
+
   root to: 'pages#welcome', id: 'home'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
